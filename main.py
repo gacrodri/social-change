@@ -32,11 +32,11 @@ class FoodHandler(webapp2.RequestHandler):
 
     def post(self):
         the_fav_food = self.request.get('user-fav-food')
-
+        
         #put into database (optional)
         food_record = Food(food_name = the_fav_food)
         food_record.put()
-
+        
         #pass to the template via a dictionary
         variable_dict = {'fav_food_for_view': the_fav_food}
         end_template = jinja_current_dir.get_template("templates/results.html")

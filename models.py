@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#
 # Copyright 2018 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,30 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-application: your-app-id
-version: 1
-runtime: python27
-api_version: 1
-threadsafe: yes
+from google.appengine.ext import ndb
 
-handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+class Food(ndb.Model):
+  food_name = ndb.StringProperty(required=True)
 
-- url: /app-stylesheets
-  static_dir: app-stylesheets 
-  
-- url: /my-images
-  static_dir: my-images
-  
-#new handlers should go ABOVE the catch all url (.*)
-- url: .*
-  script: main.app
-  
+      
+    
 
-libraries:
-- name: webapp2
-  version: "2.5.2"
-- name: jinja2
-  version: "2.6"
+
+            
