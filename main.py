@@ -51,6 +51,35 @@ class ShowFoodHandler(webapp2.RequestHandler):
         dict_for_template = {'top_fav_foods': fav_foods}
         self.response.write(food_list_template.render(dict_for_template))
 
+class ProfileHandler(webapp2.RequestHandler):
+    def get(self):
+        my_user = users.get_current_user()
+        profile_temp = jinja_current_dir.get_template("templates/profile.html")
+
+        my_profiles = Profile.query().filter(Profile.user_id == my_user.user_id()).fetch(3)
+        if len(my_profiles)==1:
+            my_profile = my_profiles[0]
+        else:
+            my_profile = None
+        dict_for_temp = {
+        'profile' : my_profile
+        }
+        self.response.write(profile_temp.render(dict_for_temp))
+
+    def post(self):
+        my_user = users.get_current_user()
+        my_nickname = self.request.get('nickname')
+        my_profiles = Profile.query().filter(Profile.user_id == my_user.user_id()).fetch(3)
+        if len(my_profiles) == 1:
+            my_profile = my_profiles[0]
+        else:
+            my_profile = Profile()
+        my_profile.nickname = my_nickname
+        my_profile.user_id= my_user.user_id()
+        my_profile = Profile(nickname= my_nickname, user_id= my_user.user_id())
+        my_profile.put()
+        self.redirect('/profile')
+
 class MainPage(webapp2.RequestHandler):
     def get(self):
         # [START user_details]
@@ -72,6 +101,7 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/profile', ProfileHandler),
     ('/food', FoodHandler),
     ('/showfavs', ShowFoodHandler)
 ], debug=True)
