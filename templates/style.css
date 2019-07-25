@@ -42,6 +42,16 @@ table {
   border-spacing: 0;
 }
 
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
 #main {
   max-width: 500px;
   margin: auto;
