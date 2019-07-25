@@ -17,39 +17,33 @@
 import webapp2
 import os
 import jinja2
-from models import Food
 from google.appengine.api import users
 
 #remember, you can get this by searching for jinja2 google app engine
+1.  Create a page to make an item
+  -- should have a form with the fields of the item (title, caption, image)
+2.  Create a datastore model for the item (has same fields)
+  -- image should be type ndb.BlobProperty (image = ndb.BlobProperty())
+3.  Create a NewItemHandler with a get method that renders the page from item #1 ^
+4.  Create a ItemHandler with a post method that is going to be called from the form in item #1.
+  -- in this handler, we want to create a new Item model with the fields from the form (self.request.get('title'))
+  -- then save that item to the database
+  -- then redirect the user to the feed page
+
 jinja_current_dir = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
 
-class FoodHandler(webapp2.RequestHandler):
+class NewItemHandler(webapp2.RequestHandler):
     def get(self):
-        start_template = jinja_current_dir.get_template("templates/welcome.html")
-        self.response.write(start_template.render())
+        start_page = jinja_current_dir.get_template("templates/welcome.html")
+        self.response.write(start_page.render())
 
+class ItemHandler(webapp2.RequestHandler):
     def post(self):
-        the_fav_food = self.request.get('user-fav-food')
 
-        #put into database (optional)
-        food_record = Food(food_name = the_fav_food)
-        food_record.put()
-
-        #pass to the template via a dictionary
-        variable_dict = {'fav_food_for_view': the_fav_food}
-        end_template = jinja_current_dir.get_template("templates/results.html")
-        self.response.write(end_template.render(variable_dict))
-
-class ShowFoodHandler(webapp2.RequestHandler):
-    def get(self):
-        food_list_template = jinja_current_dir.get_template("templates/foodlist.html")
-        fav_foods = Food.query().order(-Food.food_name).fetch(3)
-        dict_for_template = {'top_fav_foods': fav_foods}
-        self.response.write(food_list_template.render(dict_for_template))
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
