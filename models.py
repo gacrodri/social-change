@@ -16,8 +16,10 @@
 
 from google.appengine.ext import ndb
 
-class Food(ndb.Model):
-  food_name = ndb.StringProperty(required=True)
+class Item(ndb.Model):
+  title = ndb.StringProperty(required=True)
+  caption = ndb.StringProperty(required=True)
+  image = ndb.BlobProperty(required=True)
 
 class Profile(ndb.Model):
   nickname = ndb.StringProperty(required=True)
