@@ -17,6 +17,9 @@
 import webapp2
 import os
 import jinja2
+
+from models import Item
+
 from google.appengine.api import users
 
 #remember, you can get this by searching for jinja2 google app engine
@@ -47,13 +50,12 @@ class ItemHandler(webapp2.RequestHandler):
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        # [START user_details]
         main_temp = jinja_current_dir.get_template("templates/welcome.html")
         my_user = users.get_current_user()
 
         if my_user:
             auth_url = users.create_logout_url('/') #goes back to main page when logged out
-            greeting = 'Sign Out'
+            greeting = 'Welcome! Sign Out'
         else:
             auth_url = users.create_login_url('/')
             greeting = 'Sign In'
@@ -66,6 +68,6 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/food', FoodHandler),
-    ('/showfavs', ShowFoodHandler)
+    ('/new', NewItemHandler),
+    ('/show', ItemHandler)
 ], debug=True)

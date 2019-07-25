@@ -1,3 +1,25 @@
+h1 {
+  text-align: center;
+  padding: 14px;
+  font-size: 20px;
+}
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#nav {
+  background-color: #b7eba5;
+  overflow: hidden;
+}
+
+#nav a {
+  float: left;
+  padding: 16px 18px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,7 +37,6 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -41,6 +62,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 
 #main {
   max-width: 500px;
