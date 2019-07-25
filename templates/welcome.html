@@ -13,32 +13,25 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>APP</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="topnav">
-      <a href="#appname">APP</a>
-      <a class="login" href="#login">Login</a>
-
-
-    </div>
-
-
-        <h1>App Website</h1>
-        <h2>Feed</h2>
-
-
-<div id="main">
-  <div class="content-item red">The posts will be here</div>
-  <footer class="green">
-    info about us (the footer)
+<head>
+  <title>Our great recycling app</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="nav">
+    <a class="active" href="#appname">APP</a>
+    <a href="{{auth_url}}">{{greeting}}</a>
+  </div>
+  <h1>App Website</h1>
+  <div id="main">
+    <div class="content-item red">Here is the feed (posts)</div>
+    <div class="content-item blue">about this</div>
+    <footer class="red">
+      About us Contac
     </footer>
-</div>
-
-  </body>
+  </div>
+</body>
 </html>
