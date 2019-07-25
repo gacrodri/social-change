@@ -8,6 +8,14 @@ h1 {
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+#loginbuttom {
+    float: right;
+}
+#link1 {
+    float: left;
+}
+
 #nav {
   overflow: hidden;
   background-color: black;
@@ -15,7 +23,6 @@ body {
 }
 
 #nav a {
-  float: left;
   color: white;
   text-align: center;
   padding: 14px 16px;
