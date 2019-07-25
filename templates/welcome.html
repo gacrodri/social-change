@@ -31,19 +31,23 @@
 <body class="Site">
   <main class="Site-content">
   <div id="nav">
-    <a href="#appname">APP</a>
-    <a href=" ">Post</a>
-    <a id="loginbuttom" href="{{auth_url}}">{{greeting}}</a>
+    <a href="#appname"><b>APP</b></a>
+    <a href="/new"><b>POST</b></a>
+    <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
   <h1>App Website</h1>
   <div id="main">
     <div class="content-item red">Here is the feed (posts)</div>
+    {% for item in items }
+      <div>{{item.title}}</div>
+    {% endfor }
 
-    <div class="content-item blue">about this</div>
-    <footer class="red">
-      About us Contact
-    </footer>
+  <div class="content-item blue">about this</div>
   </div>
+  <footer class="red">
+    About us Contact
+  </footer>
   </main>
+
 </body>
 </html>

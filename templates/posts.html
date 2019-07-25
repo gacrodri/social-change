@@ -4,27 +4,28 @@
       <title>Our great recycling app</title>
       <link rel="stylesheet" href="style.css">
 
+
 <body class="Site">
   <main class="Site-content">
-  <div id="nav">
-    <a href="#appname">APP</a>
-    <a id="loginbuttom" href="{{auth_url}}">{{greeting}}</a>
-  </div>
+    <div id="nav">
+      <a href="#appname"><b>APP</b></a>
+      <a href="/new"><b>POST</b></a>
+      <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
+    </div>
   <h1>App Website</h1>
   <div id="main">
       <h2>Post your item</h2>
-    <form method="post" action="/">
+    <form method="post" action="/show">
       <p> Item title:</p>
-      <input type= "text" name="title" value="">
+      <input type= "text" name="firstname" value="">
       <p> Description of your item:</p>
-      <input type= "text" name="caption" value=""><br>
+      <input type= "text" name="flastname" value=""><br>
       <input type= "submit" value="Post">
     </form>
     <div class="content-item red">Here is the feed (posts)</div>
-
-    <footer class="red">
-      About us Contact
-    </footer>
   </div>
   </main>
+  <footer class="red">
+    About us Contact
+  </footer>
 </body>
