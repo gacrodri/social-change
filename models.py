@@ -17,12 +17,13 @@
 from google.appengine.ext import ndb
 
 class Item(ndb.Model):
-  title = ndb.StringProperty(required=True)
-  caption = ndb.StringProperty(required=True)
-  image = ndb.BlobProperty(required=True)
+    user_id = ndb.StringProperty(required =True)
+    title = ndb.StringProperty(required=True)
+    caption = ndb.StringProperty(required=True)
+    image = ndb.BlobProperty(required=True)
 
 class Profile(ndb.Model):
-  nickname = ndb.StringProperty(required=True)
-  user_id = ndb.StringProperty()
-  joined_on = ndb.DateTimeProperty(auto_now_add=True)
-  updated_on = ndb.DateTimeProperty(auto_now=True)
+    nickname = ndb.StringProperty(required=True)
+    user_id = ndb.StringProperty()
+    joined_on = ndb.DateTimeProperty(auto_now_add=True)
+    updated_on = ndb.DateTimeProperty(auto_now=True)
