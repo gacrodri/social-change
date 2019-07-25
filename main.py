@@ -36,7 +36,7 @@ class NewItemHandler(webapp2.RequestHandler):
 
 class ItemHandler(webapp2.RequestHandler):
     def post(self):
-        the_title = self.request.get('title')
+        the_post = self.request.get('title')
         the_caption = self.request.get('caption')
         the_image = self.request.get('image')
             #put into database (optional)
