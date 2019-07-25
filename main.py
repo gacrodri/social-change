@@ -22,16 +22,6 @@ from models import Item
 
 from google.appengine.api import users
 
-#remember, you can get this by searching for jinja2 google app engine
-1.  Create a page to make an item
-  -- should have a form with the fields of the item (title, caption, image)
-2.  Create a datastore model for the item (has same fields)
-  -- image should be type ndb.BlobProperty (image = ndb.BlobProperty())
-3.  Create a NewItemHandler with a get method that renders the page from item #1 ^
-4.  Create a ItemHandler with a post method that is going to be called from the form in item #1.
-  -- in this handler, we want to create a new Item model with the fields from the form (self.request.get('title'))
-  -- then save that item to the database
-  -- then redirect the user to the feed page
 
 jinja_current_dir = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
