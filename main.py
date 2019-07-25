@@ -17,11 +17,18 @@
 import webapp2
 import os
 import jinja2
-
-from models import Item
-
 from google.appengine.api import users
 
+#remember, you can get this by searching for jinja2 google app engine
+1.  Create a page to make an item
+  -- should have a form with the fields of the item (title, caption, image)
+2.  Create a datastore model for the item (has same fields)
+  -- image should be type ndb.BlobProperty (image = ndb.BlobProperty())
+3.  Create a NewItemHandler with a get method that renders the page from item #1 ^
+4.  Create a ItemHandler with a post method that is going to be called from the form in item #1.
+  -- in this handler, we want to create a new Item model with the fields from the form (self.request.get('title'))
+  -- then save that item to the database
+  -- then redirect the user to the feed page
 
 jinja_current_dir = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -31,7 +38,7 @@ jinja_current_dir = jinja2.Environment(
 
 class NewItemHandler(webapp2.RequestHandler):
     def get(self):
-        start_page = jinja_current_dir.get_template("templates/welcome.html")
+        start_page = jinja_current_dir.get_template("welcome.html")
         self.response.write(start_page.render())
 
 class ItemHandler(webapp2.RequestHandler):
@@ -40,12 +47,13 @@ class ItemHandler(webapp2.RequestHandler):
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
+        # [START user_details]
         main_temp = jinja_current_dir.get_template("templates/welcome.html")
         my_user = users.get_current_user()
 
         if my_user:
             auth_url = users.create_logout_url('/') #goes back to main page when logged out
-            greeting = 'Welcome! Sign Out'
+            greeting = 'Sign Out'
         else:
             auth_url = users.create_login_url('/')
             greeting = 'Sign In'
@@ -58,6 +66,6 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/new', NewItemHandler),
-    ('/show', ItemHandler)
+    ('/food', FoodHandler),
+    ('/showfavs', ShowFoodHandler)
 ], debug=True)
