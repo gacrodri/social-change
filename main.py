@@ -44,6 +44,7 @@ class ItemHandler(webapp2.RequestHandler):
         item = Item(title = the_post, caption = the_caption, image = the_image, user_id= the_user )
         item.user_id = users.get_current_user().user_id()
         item.put()
+        self.response.write(title, caption)
         self.redirect("/")
 
 
