@@ -22,6 +22,9 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+- url: /style\.css
+  static_files: templates/style.css
+  upload: templates/style\.css
 
 - url: /app-stylesheets
   static_dir: app-stylesheets
