@@ -42,8 +42,8 @@ class MyPostsHandler(webapp2.RequestHandler):
             greeting = 'Sign In'
         # [END user_details]
         items = Item.query().fetch()
-        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
-        others_items = Item.query().order(-Item.title).fetch()
+        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.created_on).fetch()
+        others_items = Item.query().order(-Item.created_on).fetch()
 
         my_dict = {
             'auth_url': auth_url,
@@ -83,8 +83,8 @@ class MainPage(webapp2.RequestHandler):
             greeting = 'Sign In'
         # [END user_details]
         items = Item.query().fetch()
-        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
-        others_items = Item.query().order(-Item.title).fetch()
+        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.created_on).fetch()
+        others_items = Item.query().order(-Item.created_on).fetch()
 
         my_dict = {
             'auth_url': auth_url,

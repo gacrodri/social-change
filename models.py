@@ -21,9 +21,4 @@ class Item(ndb.Model):
     title = ndb.StringProperty(required=True)
     caption = ndb.StringProperty(required=True)
     image_url = ndb.StringProperty(required=True)
-
-class Profile(ndb.Model):
-    nickname = ndb.StringProperty(required=True)
-    user_id = ndb.StringProperty()
-    joined_on = ndb.DateTimeProperty(auto_now_add=True)
-    updated_on = ndb.DateTimeProperty(auto_now=True)
+    created_on = ndb.DateTimeProperty(auto_now_add=True)
