@@ -17,6 +17,7 @@
 import webapp2
 import os
 import jinja2
+import time
 
 from models import Item
 
@@ -31,14 +32,8 @@ jinja_current_dir = jinja2.Environment(
 class ItemHandler(webapp2.RequestHandler):
     def get(self):
         my_user = users.get_current_user()
-        start_page = jinja_current_dir.get_template("templates/welcome.html")
-        your_post = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
-        others_post = Item.query().order(-Item.title).fetch()
-        dict_for_template = {
-            'your_own_posts': your_post,
-            'everyones_posts': others_post
-        }
-        self.response.write(start_page.render(dict_for_template))
+        start_page = jinja_current_dir.get_template("templates/posts.html")
+        self.response.write(start_page.render())
 
     def post(self):
         the_post = self.request.get('title')
@@ -48,6 +43,7 @@ class ItemHandler(webapp2.RequestHandler):
         item = Item(title = the_post, caption = the_caption, image = the_image)
         item.user_id = users.get_current_user().user_id()
         item.put()
+        time.sleep(0.1)
         self.redirect("/")
 
 
@@ -68,9 +64,13 @@ class MainPage(webapp2.RequestHandler):
             greeting = 'Sign In'
         # [END user_details]
         items = Item.query().fetch()
+        your_post = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
+        others_post = Item.query().order(-Item.title).fetch()
         my_dict = {
             'auth_url': auth_url,
-            'greeting': greeting
+            'greeting': greeting,
+            'your_own_posts': your_post,
+            'everyones_posts': others_post
         }
         self.response.write(main_temp.render(my_dict))
 
