@@ -40,7 +40,7 @@
     <div class="content-item red">
       <h1>Your Posts</h1>
       {% for post in your_own_items %}
-        <p>{{post.title}}</p>
+        <p id="title">{{post.title}}</p>
         <p>{{post.caption}}</p>
           <p>{{post.image}}</p>
       {% endfor %}
@@ -50,7 +50,7 @@
 
       <h1>People's Posts</h1>
       {% for post in everyones_items %}
-        <p>{{post.title}}</p>
+        <p id="title">{{post.title}}</p>
         <p>{{post.caption}}</p>
         <p>{{post.image}}</p>
       {% endfor %}
