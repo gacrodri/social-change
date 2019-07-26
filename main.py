@@ -28,13 +28,18 @@ jinja_current_dir = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-
-class NewItemHandler(webapp2.RequestHandler):
-    def get(self):
-        start_page = jinja_current_dir.get_template("templates/posts.html")
-        self.response.write(start_page.render())
-
 class ItemHandler(webapp2.RequestHandler):
+    def get(self):
+        my_user = users.get_current_user()
+        start_page = jinja_current_dir.get_template("templates/welcome.html")
+        your_post = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
+        others_post = Item.query().order(-Item.title).fetch()
+        dict_for_template = {
+            'your_own_posts': your_post,
+            'everyones_posts': others_post
+        }
+        self.response.write(start_page.render(dict_for_template))
+
     def post(self):
         the_post = self.request.get('title')
         the_caption = self.request.get('caption')
@@ -43,7 +48,6 @@ class ItemHandler(webapp2.RequestHandler):
         item = Item(title = the_post, caption = the_caption, image = the_image)
         item.user_id = users.get_current_user().user_id()
         item.put()
-
         self.redirect("/")
 
 
@@ -72,6 +76,5 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/new', NewItemHandler),
-    ('/show', ItemHandler)
+    ('/new-post', ItemHandler)
 ], debug=True)
