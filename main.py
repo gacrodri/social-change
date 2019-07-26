@@ -59,24 +59,14 @@ class MainPage(webapp2.RequestHandler):
             greeting = 'Sign In'
         # [END user_details]
         items = Item.query().fetch()
-        your_title = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
-        others_title = Item.query().order(-Item.title).fetch()
-
-        your_caption = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.caption).fetch()
-        others_caption = Item.query().order(-Item.caption).fetch()
-
-        your_image = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.image).fetch()
-        others_image =Item.query().order(-Item.image).fetch()
+        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
+        others_items = Item.query().order(-Item.title).fetch()
 
         my_dict = {
             'auth_url': auth_url,
             'greeting': greeting,
-            'your_own_titles': your_title,
-            'everyones_titles': others_title,
-            'your_own_captions':your_caption,
-            'everyones_captions':others_caption,
-            'your_own_images':your_image,
-            'everyones_images':others_image
+            'your_own_items': your_items,
+            'everyones_items': others_items,
         }
         self.response.write(main_temp.render(my_dict))
 
