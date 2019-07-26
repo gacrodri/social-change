@@ -46,11 +46,6 @@ class ItemHandler(webapp2.RequestHandler):
         time.sleep(0.1)
         self.redirect("/")
 
-
-            #pass to the template via a dictionary
-
-
-
 class MainPage(webapp2.RequestHandler):
     def get(self):
         main_temp = jinja_current_dir.get_template("templates/welcome.html")
