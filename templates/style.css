@@ -9,7 +9,7 @@ form {
 }
 h1 {
   text-align: center;
-  font-size: 20px
+  font-size: 23px
 }
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -34,7 +34,7 @@ body {
   padding: 14px 16px;
   padding-bottom: 15px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .Site {
@@ -47,8 +47,7 @@ body {
   flex: 1;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
