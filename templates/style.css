@@ -25,17 +25,25 @@ body {
     float: left;
 }
 
+
 #nav {
+  height: 32px;
+  padding: 14px;
+  text-align: center;
   overflow: hidden;
   background-color: black;
-  margin-bottom: 20px;
+}
+
+#nav h1 {
+  display: inline;
+
 }
 
 #nav a {
   color: white;
   text-align: center;
-  padding: 14px 16px;
-  padding-bottom: 15px;
+  padding: 9px;
+  padding-bottom: 18px;
   text-decoration: none;
   font-size: 20px;
 }
@@ -60,7 +68,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+menu, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -99,16 +107,6 @@ table {
   display: flex;
   flex-direction: column;
   min-height: 90vh;
-}
-
-#nav {
-  height: 30px;
-  padding: 8px;
-  text-align: center;
-}
-
-#nav h1 {
-  display: inline;
 }
 
 button {

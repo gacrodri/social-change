@@ -39,13 +39,13 @@
   <h1>App Website</h1>
   <div id="main">
     <div class="content-item red">
+
       <h1>Posts</h1>
       {% for post in everyones_items %}
         <p id="title">{{post.title}}</p>
         <p>{{post.caption}}</p>
         <img id="images" src="{{post.image_url}}">
       {% endfor %}
-
       <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
     </div>
 
