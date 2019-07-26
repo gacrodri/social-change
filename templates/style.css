@@ -102,7 +102,7 @@ table {
 
 
 #main {
-  max-width: 500px;
+  max-width: 1270px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -143,10 +143,5 @@ footer {
 
 .red {
   background-color: black;
-  color: white;
-}
-
-.blue {
-  background-color: yellow;
   color: white;
 }
