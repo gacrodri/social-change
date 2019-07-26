@@ -39,18 +39,30 @@
   <div id="main">
     <div class="content-item red">
       <h1>Your Posts</h1>
-      {% for post in your_own_posts %}
+      {% for post in your_own_titles %}
         <p>{{post.title}}</p>
       {% endfor %}
+      {% for post in your_own_captions %}
+        <p>{{post.caption}}</p>
+      {% endfor %}
+      {% for post in your_own_images %}
+        <p>{{post.image}}</p>
+      {% endfor %}
+
       <!--<h4>The fetched records from the query look like this</h4>
       {{your_own_posts}}-->
 
       <h1>People's Posts</h1>
-      {% for post in everyones_posts %}
+      {% for post in everyones_titles %}
         <p>{{post.title}}</p>
       {% endfor %}
-      <!--<h4>The fetched records from the query look like this</h4>
-      {{everyones_posts}}-->
+      {% for post in everyones_captions %}
+        <p>{{post.caption}}</p>
+      {% endfor %}
+      {% for post in everyones_images %}
+        <p>{{post.image}}</p>
+      {% endfor %}
+      <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
     </div>
   
   </div>
