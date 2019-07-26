@@ -42,7 +42,7 @@
       {% for post in your_own_items %}
         <p id="title">{{post.title}}</p>
         <p>{{post.caption}}</p>
-          <p>{{post.image}}</p>
+        <img id="images" src="{{post.image_url}}">
       {% endfor %}
 
       <!--<h4>The fetched records from the query look like this</h4>
@@ -52,7 +52,7 @@
       {% for post in everyones_items %}
         <p id="title">{{post.title}}</p>
         <p>{{post.caption}}</p>
-        <p>{{post.image}}</p>
+        <img id="images" src="{{post.image_url}}">
       {% endfor %}
 
       <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->

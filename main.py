@@ -38,9 +38,9 @@ class ItemHandler(webapp2.RequestHandler):
     def post(self):
         the_post = self.request.get('title')
         the_caption = self.request.get('caption')
-        the_image = self.request.get('image')
+        the_image = self.request.get('image_url')
             #put into database (optional)
-        item = Item(title = the_post, caption = the_caption, image = the_image)
+        item = Item(title = the_post, caption = the_caption, image_url = the_image)
         item.user_id = users.get_current_user().user_id()
         item.put()
         time.sleep(0.1)

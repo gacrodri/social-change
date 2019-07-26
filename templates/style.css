@@ -1,4 +1,7 @@
-
+#images{
+  height: 200px;
+  width: 50%;
+}
 /* here */
 #title{
   font-size: 20px;

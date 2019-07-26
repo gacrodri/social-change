@@ -20,7 +20,7 @@ class Item(ndb.Model):
     user_id = ndb.StringProperty(required =True)
     title = ndb.StringProperty(required=True)
     caption = ndb.StringProperty(required=True)
-    image = ndb.BlobProperty(required=True)
+    image_url = ndb.StringProperty(required=True)
 
 class Profile(ndb.Model):
     nickname = ndb.StringProperty(required=True)
