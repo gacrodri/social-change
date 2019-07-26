@@ -13,5 +13,17 @@ indexes:
 - kind: Item
   properties:
   - name: user_id
+  - name: caption
+    direction: desc
+
+- kind: Item
+  properties:
+  - name: user_id
+  - name: image
+    direction: desc
+
+- kind: Item
+  properties:
+  - name: user_id
   - name: title
     direction: desc
