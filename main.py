@@ -29,6 +29,30 @@ jinja_current_dir = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class MyPostsHandler(webapp2.RequestHandler):
+    def get(self):
+        main_temp = jinja_current_dir.get_template("templates/my-posts.html")
+        my_user = users.get_current_user()
+
+        if my_user:
+            auth_url = users.create_logout_url('/') #goes back to main page when logged out
+            greeting = 'Welcome! Sign Out'
+        else:
+            auth_url = users.create_login_url('/')
+            greeting = 'Sign In'
+        # [END user_details]
+        items = Item.query().fetch()
+        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.title).fetch()
+        others_items = Item.query().order(-Item.title).fetch()
+
+        my_dict = {
+            'auth_url': auth_url,
+            'greeting': greeting,
+            'your_own_items': your_items,
+            'everyones_items': others_items,
+        }
+        self.response.write(main_temp.render(my_dict))
+
 class ItemHandler(webapp2.RequestHandler):
     def get(self):
         my_user = users.get_current_user()
@@ -72,5 +96,6 @@ class MainPage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/new-post', ItemHandler)
+    ('/new-post', ItemHandler),
+    ('/my-posts', MyPostsHandler)
 ], debug=True)
