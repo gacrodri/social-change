@@ -24,15 +24,15 @@
   <div id="main">
     <div class="content-item red">
       <h1 >Your Posts</h1>
-      {% for post in your_own_items %}
+      {% for post in everyones_items %}
         <p id="title">{{post.title}}</p>
+        <img id="images" src="{{post.image_url}}">
         <p>{{post.caption}}</p>
-          <p>{{post.image}}</p>
       {% endfor %}
     </div>
   </div>
   <footer class="red">
-    About us Contact
+    About us     Contact     Share
   </footer>
   </main>
 

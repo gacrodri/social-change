@@ -33,7 +33,7 @@
   <div id="nav">
     <a id="link1" href="/"><b>APP</b></a>
     <a id="link1" href="/new-post"><b>POST</b></a>
-    <a id="link1" href="/my-posts"><b>MY POSTS</b></a>
+    <a id="link1" href="/my-posts"><b>my POSTs</b></a>
     <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
   <h1>App Website</h1>
@@ -43,15 +43,16 @@
       <h1>Posts</h1>
       {% for post in everyones_items %}
         <p id="title">{{post.title}}</p>
-        <p>{{post.caption}}</p>
         <img id="images" src="{{post.image_url}}">
+        <p>{{post.caption}}</p>
       {% endfor %}
+
       <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
     </div>
 
   </div>
   <footer class="red">
-    About us Contact
+    About us     Contact
   </footer>
   </main>
 
