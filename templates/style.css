@@ -7,8 +7,7 @@
   font-size: 20px;
 }
 .grid {
-  width: 300px;
-
+  width: 170px;
 }
 
 form {
@@ -127,7 +126,7 @@ button {
   float: left;
 }
 
-.content-item {
+.content-item .grid {
   padding: 10px;
   margin: 10px;
   flex: 1;
