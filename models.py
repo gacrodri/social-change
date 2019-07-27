@@ -22,3 +22,4 @@ class Item(ndb.Model):
     caption = ndb.StringProperty(required=True)
     image_url = ndb.StringProperty(required=True)
     created_on = ndb.DateTimeProperty(auto_now_add=True)
+    
