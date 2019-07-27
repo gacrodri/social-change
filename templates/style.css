@@ -1,6 +1,6 @@
 #images{
   height: 200px;
-  /*width: 50%;*/
+  width: 150px;
 }
 /* here */
 #title{
@@ -146,7 +146,7 @@ footer {
   bottom: 0;
 }
 
-.footercolor {
+.red {
   background-color: black;
   color: white;
 }
