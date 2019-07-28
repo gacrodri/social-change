@@ -23,11 +23,13 @@ body {
 
 #loginbuttom {
     float: right;
+    font-family: 'Zilla Slab', serif;
 }
 #link1 {
     float: left;
     font-size: 45px;
-    font-family: 'Mountains of Christmas', cursive;
+    font-family: 'Zilla Slab', serif;
+
 }
 #postformat {
     display: flex;
@@ -36,6 +38,7 @@ body {
 }
 
 #nav {
+  font-size: 40px;
   height: 60px;
   padding: 14px;
   text-align: center;
@@ -84,6 +87,15 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
+}
+h2{
+  font-size: 30px;
+}
+a, a:visited {
+  color: inherit;
+}
+a:hover{
+  color: green;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -146,9 +158,51 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
+  font-family: 'Zilla Slab', serif;
 }
 
 .red {
   background-color: black;
   color: white;
+}
+/* Three columns side by side */
+.column {
+  float: left;
+  width: 32.2%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+
+.button3:hover {
+  background-color: #555;
 }

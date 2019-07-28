@@ -36,23 +36,45 @@
     <a id="link1" href="/my-posts"><b>My Posts</b></a>
     <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
+
   <h1>Home Grown</h1>
-  <div id="main">
-    <h1>Posts</h1>
-    <div id = "postformat" class="content-item red">
-      {% for post in everyones_items %}
-        <div class="grid">
-          <a href="/details?item_id={{post.key.id()}}">More About this Item</a>
-          <p id="title">{{post.title}}</p>
-          <img id="images" src="{{post.image_url}}">
-          <p>{{post.caption}}</p>
+      <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="" alt="Gabriela" style="width:100%">
+          <div class="container">
+            <h2>Gaby</h2>
+            <p class="title">Idk What to Put here</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+          </div>
         </div>
-      {% endfor %}
+      </div>
 
-      <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
+      <div class="column">
+        <div class="card">
+          <img src="" alt="Ivania" style="width:100%">
+          <div class="container">
+            <h2>Ivania </h2>
+            <p class="title">Idk What to Put Here</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="" alt="Almaya" style="width:100%">
+          <div class="container">
+            <h2>Almaya</h2>
+            <p class="title">Idk What to Put Here</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-  </div>
   <footer class="red">
     <a href="/aboutus">About us</a> | <a href="mailto:someone@example.com">Contact</a> | Share
   </footer>
