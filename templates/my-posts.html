@@ -4,7 +4,7 @@
   <title>Our great recycling app</title>
 
   <link rel="stylesheet" href="template/style.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Josefin+Slab|Lusitana|Mountains+of+Christmas|Prata|Slabo+13px|Zilla+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <link rel="stylesheet" href="template/style.css">
@@ -15,14 +15,14 @@
 <body class="Site">
   <main class="Site-content">
   <div id="nav">
-    <a id="link1" href="/"><b>APP</b></a>
-    <a id="link1" href="/new-post"><b>POST</b></a>
-    <a id="link1" href="/my-posts"><b>MY POSTS</b></a>
+    <a id="link1" href="/"><b>Home</b></a>
+    <a id="link1" href="/new-post"><b>Post</b></a>
+    <a id="link1" href="/my-posts"><b>My Posts</b></a>
     <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
-  <h1>App Website</h1>
+  <h1>Home Grown</h1>
   <div id="main">
-    <h1>My posts</h1>
+    <h1>My Posts</h1>
     <div id = "postformat" class="content-item red">
       {% for post in your_own_items %}
         <div class="grid">

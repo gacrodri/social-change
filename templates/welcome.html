@@ -17,8 +17,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Our great recycling app</title>
-
+  <title>Our Great Recycling App </title>
+  <link href="https://fonts.googleapis.com/css?family=Happy+Monkey|Josefin+Slab|Lusitana|Mountains+of+Christmas|Prata|Slabo+13px|Zilla+Slab&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="template/style.css">
 
   <link rel="stylesheet" href="style.css">
@@ -31,18 +31,18 @@
 <body class="Site">
   <main class="Site-content">
   <div id="nav">
-    <a id="link1" href="/"><b>APP</b></a>
-    <a id="link1" href="/new-post"><b>POST</b></a>
-    <a id="link1" href="/my-posts"><b>MY POSTS</b></a>
+    <a id="link1" href="/"><b>Home</b></a>
+    <a id="link1" href="/new-post"><b>Post</b></a>
+    <a id="link1" href="/my-posts"><b>My Posts</b></a>
     <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
-  <h1>App Website</h1>
+  <h1>Home Grown</h1>
   <div id="main">
     <h1>Posts</h1>
     <div id = "postformat" class="content-item red">
       {% for post in everyones_items %}
         <div class="grid">
-          <a href="/details?item_id={{post.key.id()}}">details</a>
+          <a href="/details?item_id={{post.key.id()}}">More About this Item</a>
           <p id="title">{{post.title}}</p>
           <img id="images" src="{{post.image_url}}">
           <p>{{post.caption}}</p>
