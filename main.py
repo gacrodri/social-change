@@ -80,7 +80,12 @@ class ItemHandler(webapp2.RequestHandler):
     def get(self):
         start_page = jinja_current_dir.get_template("templates/posts.html")
         my_user, auth_url, greeting = get_user_info()
-        self.response.write(start_page.render())
+        my_dict = {
+            'auth_url': auth_url,
+            'greeting': greeting
+        }
+
+        self.response.write(start_page.render(my_dict))
 
     def post(self):
         the_post = self.request.get('title')
