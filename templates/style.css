@@ -1,3 +1,8 @@
+
+
+/* heree */
+
+
 #images{
   height: 200px;
   width: 150px;
@@ -215,9 +220,9 @@ footer {
 }
 
 /* Some left and right padding inside the container */
-.container {
+/* .container {
   padding: 0 16px;
-}
+} */
 
 /* Clear floats */
 .container::after, .row::after {
