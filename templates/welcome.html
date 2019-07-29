@@ -42,10 +42,10 @@
     <div id = "postformat" class="content-item red">
       {% for post in everyones_items %}
         <div class="grid">
-          <p id="title">{{post.title}}</p>
+          <p id="title"><a href="/details?item_id={{post.key.id()}}">{{post.title}}</a></p>
           <img id="images" src="{{post.image_url}}">
           <p>{{post.caption}}</p>
-          <a href="/details?item_id={{post.key.id()}}">More About this Item</a>
+          <!--<a href="/details?item_id={{post.key.id()}}">More About this Item</a>-->
         </div>
       {% endfor %}
 
