@@ -20,7 +20,7 @@ import jinja2
 import time
 
 from models import Item
-
+from google.appengine.ext import ndb
 from google.appengine.api import users
 
 
@@ -40,15 +40,16 @@ class DetailItemHandler(webapp2.RequestHandler):
             auth_url = users.create_login_url('/')
             greeting = 'Sign In'
 
-        items = Item.query().fetch()
-        your_items = Item.query().filter(Item.user_id == my_user.user_id()).order(-Item.created_on).fetch()
-        others_items = Item.query().order(-Item.created_on).fetch()
+        item_key_string = self.request.get("item")
+        item_key = ndb.Key(urlsafe=item_key_string)
+        item = item_key.get()
+
 
         my_dict = {
             'auth_url': auth_url,
             'greeting': greeting,
-            'your_own_items': your_items,
-            'everyones_items': others_items,
+            'item':item
+
         }
         self.response.write(main_temp.render(my_dict))
 
@@ -146,6 +147,6 @@ app = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/new-post', ItemHandler),
     ('/my-posts', MyPostsHandler),
-    ('/detail', DetailItemHandler),
+    ('/details', DetailItemHandler),
     ('/aboutus', AboutUsHandler)
 ], debug=True)

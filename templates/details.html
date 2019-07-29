@@ -24,13 +24,9 @@
   <div id="main">
     <h1>Item Details</h1>
     <div id = "postformat" class="content-item red">
-      {% for post in your_own_items %}
-        <div class="grid">
-          <h1 id="title">{{post.title}}</h1>
-          <img id="images" src="{{post.image_url}}">
-          <p>{{post.caption}}</p>
-        </div>
-      {% endfor %}
+      {{item.title}}
+      <img id="images"  src={{item.image_url}}>
+      {{item.caption}}
 
       <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
     </div>
