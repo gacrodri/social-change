@@ -133,7 +133,8 @@ a, a:visited {
   text-decoration: none;
 }
 a:hover{
-  color: green;
+  color: white;
+  text-shadow:  2px 2px red;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
