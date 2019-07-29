@@ -1,4 +1,12 @@
 
+input[type=submit] {
+  background-color: #34eb67;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 /* heree */
 
@@ -113,6 +121,7 @@ input {
 h2{
   font-size: 30px;
   font-family: 'Zilla Slab', serif;
+
 }
 h1{
   font-size: 40px;
@@ -152,7 +161,7 @@ table {
 
 
 #main {
-  /*max-width: 1270px;*/
+  /* max-width: 1270px; */
   margin: auto;
   min-height: 90vh;
 }
