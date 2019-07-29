@@ -1,9 +1,11 @@
 #details {
   text-align: center;
+  padding: 15px;
 }
 #imagesdetails {
-  height: 300px;
-  width: 250px;
+  padding-top: 15px;
+  height: 325px;
+  width: 275px;
 }
 
 input[type=submit] {
@@ -210,6 +212,7 @@ footer {
 .red {
   background-color: black;
   color: white;
+  padding-top: 15px;
 }
 .stickyfooter{
   background-color: black;
