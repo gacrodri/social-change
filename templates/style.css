@@ -189,6 +189,10 @@ footer {
   background-color: black;
   color: white;
 }
+.stickyfooter{
+  background-color: black;
+  color:white;
+}
 /* Three columns side by side */
 .column {
   float: left;
