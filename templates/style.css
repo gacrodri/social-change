@@ -1,9 +1,11 @@
 #details {
   text-align: center;
+  padding: 20px;
 }
 #imagesdetails {
-  height: 300px;
-  width: 250px;
+  padding-top: 20px;
+  height: 325px;
+  width: 275px;
 }
 
 input[type=submit] {
