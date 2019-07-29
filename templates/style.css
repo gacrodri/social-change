@@ -70,13 +70,13 @@ body {
   flex: 1;
 }
 
-html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6,label, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
@@ -88,11 +88,35 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
 }
+
+input[type=submit]:hover {
+  background-color: #f5d742;
+}
+p{
+  font-family: 'Zilla Slab', serif;
+}
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
 h2{
   font-size: 30px;
+  font-family: 'Zilla Slab', serif;
+}
+h1{
+  font-size: 40px;
+  font-family: 'Zilla Slab', serif;
 }
 a, a:visited {
   color: inherit;
+  font-family: 'Zilla Slab', serif;
+  text-decoration: none;
 }
 a:hover{
   color: green;
