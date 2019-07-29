@@ -1,7 +1,10 @@
 #details {
   text-align: center;
 }
-
+#imagesdetails {
+  height: 300px;
+  width: 250px;
+}
 
 input[type=submit] {
   background-color: #34eb67;

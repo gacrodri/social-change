@@ -21,13 +21,14 @@
     <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
   </div>
   <h1>Home Grown</h1>
+
   <div id="details">
     <h2>Item Details</h2>
     <div class="content-item red">
-      {{item.title}}
-      <img id="images"  src={{item.image_url}}>
-      {{item.caption}}
-
+      <h2>{{item.title}} </h2>
+      <img id="imagesdetails"  src={{item.image_url}}>
+      <p>{{item.caption}}</p>
+      <input type= "submit" value="Message owner">
       <!--<h4>The fetched records from the query look like this</h4> {{everyones_posts}}-->
     </div>
 
