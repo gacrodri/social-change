@@ -212,6 +212,7 @@ footer {
 .red {
   background-color: black;
   color: white;
+  padding-top: 15px;
 }
 .stickyfooter{
   background-color: black;
