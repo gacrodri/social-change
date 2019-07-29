@@ -14,12 +14,7 @@
 </head>
 <body class="Site">
   <main class="Site-content">
-  <div id="nav">
-    <a id="link1" href="/"><b>Home</b></a>
-    <a id="link1" href="/new-post"><b>Post</b></a>
-    <a id="link1" href="/my-posts"><b>My Posts</b></a>
-    <a id="loginbuttom" href="{{auth_url}}"><b>{{greeting}}</b></a>
-  </div>
+    {% include 'templates/navbar.html' %}
   <h1>Home Grown</h1>
   <div id="details">
   <h2>Item Details</h2>
